@@ -2,25 +2,6 @@
 #Author Lance Zaldua
 #For Improvement
 
-	include 'Models/UserModel.php';
-	include 'Connector/Connector.php';
-	include 'Services/UserService.php';
-	
-	$userModel = new UserModel();
-	$db = new Connector();
-	$userService = new UserService();
-	
-	if(isset($_POST['Register'])){
-		$data = $userModel->populateModel($_POST); //pass the post variables to the user model
-		if(count($data)===0){//if data is complete and valid do below
-			$returnedData = $userService->insertUser($userModel);//insert to database process starts here
-			//echo $returnedData['userModel']->getBirthday();
-		}else{
-			foreach ($data as $item){
-				echo $item."<br> "; //print error in data entry
-			}
-		}
-	}
 ?>
 <!DOCTYPE html>
 <html>

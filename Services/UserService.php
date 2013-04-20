@@ -13,18 +13,15 @@ class UserService {
 			$query = sprintf("INSERT INTO `reservation_tbl`(`firstName`,`lastName`,`middleName`,`mobile`,`email`,`birthdate`) VALUES('%s','%s','%s'
 			,'%s','%s','%s')",$userModel->getFirstName(),$userModel->getLastName(),$userModel->getMiddleName(),$userModel->getMobile(),$userModel->getEmail(), $userModel->getBirthday()		
 			);
-			
+			$data['userModel'] = $userModel;
 			if(mysql_query($query) or die(mysql_error())){//check if insertion to db is successful
-				
 				$data['success'] = 'Customer creation is a success'; 
 				return $data;
 			}else{
-				
 				$data['success'] = 'Error in customer creation'; 
 				return $data;
 			}
 		}else{
-				$data['userModel'] = $userModel;
 				$data['success'] = 'Duplicate customer email'; 
 				return $data;
 		}

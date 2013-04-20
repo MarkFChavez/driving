@@ -10,17 +10,7 @@
 	$db = new Connector();
 	$userService = new UserService();
 	
-	if(isset($_POST['Register'])){
-		$data = $userModel->populateModel($_POST); //pass the post variables to the user model
-		if(count($data)===0){//if data is complete and valid do below
-			$returnedData = $userService->insertUser($userModel);//insert to database process starts here
-			//echo $returnedData['userModel']->getBirthday();
-		}else{
-			foreach ($data as $item){
-				echo $item."<br> "; //print error in data entry
-			}
-		}
-	}
+	$data = $userService->getRegistrations();
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,8 +38,8 @@
           <a href="#" class="brand">Driiivee</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="index.php">Home</a></li>
-              <li><a href="Registration.php">Registration</a></li>
+              <li><a href="index.php">Home</a></li>
+              <li class="active"><a href="Registration.php">Registration</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -58,11 +48,50 @@
     </div>
   
 	<div class="container">
-		<h1>This is the skeleton</h1>
-		<p>I need to add more stuff here</p>
+		<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Middle Name</th>
+					<th>Last Name</th>
+					<th>Birthday</th>
+					<th>Mobile</th>
+					<th>Email</th>
+					<th>Reservation Date</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<?php foreach ($data as $userModel):?>
+				<tr>
+					<td><?php echo $userModel->getFirstName()?></td>
+					<td><?php echo $userModel->getMiddleName()?></td>
+					<td><?php echo $userModel->getLastName()?></td>
+					<td><?php echo $userModel->getBirthday() ?></td>
+					<td><?php echo $userModel->getMobile()?></td>
+					<td><?php echo $userModel->getEmail()?></td>
+					<td><?php echo $userModel->getReservationDate()?></td>
+				</tr>
+				<?php endforeach;?>
+			</tbody>
+		</table>
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	
+	<script src="jquery-ui/jquery-1.9.1.js"></script>
+	<script src="jquery-ui/ui/jquery.ui.core.js"></script>
+	<script src="jquery-ui/ui/jquery.ui.widget.js"></script>
+	<script src="jquery-ui/ui/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#birthday").datepicker({
+				dateFormat: 'yy-mm-dd',
+	            changeMonth: true,
+	            changeYear: true,
+	            yearRange:'-100y:c+nn',
+	            maxDate: '-18y'
+	        });
+		});
+	</script>
 	</body>
 </html>

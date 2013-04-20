@@ -8,14 +8,16 @@ class UserModel {
 	private $birthdate;
 	private $mobile;
 	private $email;
+	private $reservationDate;
 	
 	public function populateModel($data) {
 		$this->setFirstName($data['firstName']);
 		$this->setLastName($data['lastName']);
 		$this->setMiddleName($data['middleName']);
 		$this->setAge($data['mobile']);
-		$this->setBirthday($data['birthday']);
+		$this->setBirthday($data['birthdate']);
 		$this->setEmail($data['email']);
+		
 		
 		return $this->validateData($data);
 	}
@@ -48,6 +50,10 @@ class UserModel {
 		$this->email = $this->cleanString($email);
 	}
 	
+	public function setReservationDate($date){
+		$this->reservationDate = $this->cleanString($date);
+	}
+	
 	public function getFirstName(){return $this->firstName;}
 	
 	public function getMiddleName(){return $this->middleName;}
@@ -59,6 +65,8 @@ class UserModel {
 	public function getBirthday(){return $this->birthdate;}
 	
 	public function getEmail(){return $this->email;}
+	
+	public function getReservationDate(){return $this->reservationDate;}
 	
 	#Below are the validation and cleaning methods
 	

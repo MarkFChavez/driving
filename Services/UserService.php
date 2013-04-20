@@ -29,6 +29,19 @@ class UserService {
 				return $data;
 		}
 	}
+
+	public function getRegistrations() {
+		$query = "SELECT * FROM `reservation_tbl`";
+		$result = mysql_query($query);
+		$reservations = array();
+		
+		while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
+			$userModel = new UserModel();
+			$userModel->populateModel($row);
+			$reservations[] = $userModel;
+		}
+		return $reservations;
+	}
 	
 	private function determineIfEmailisTaken($email){//check if email is already existing
 		$query = sprintf("SELECT COUNT(*) AS 'existing' FROM `reservation_tbl` WHERE email ='%s'",$email);
@@ -36,6 +49,5 @@ class UserService {
 		$existing = mysql_fetch_row($result);
 		return $existing[0]; //return row count
 	}
-	
 	
 }

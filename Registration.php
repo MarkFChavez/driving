@@ -49,7 +49,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li><a href="index.php">Home</a></li>
-              <li class="active"><a href="Registration.php">About</a></li>
+              <li class="active"><a href="Registration.php">Registration</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -62,7 +62,7 @@
 			<label>First Name: </label><input type="text" name="firstName" value="<?php echo $userModel->getFirstName() ?>"><br />
 			<label>Middle Name: </label><input type="text" name="middleName" value="<?php echo $userModel->getMiddleName() ?>"><br />
 			<label>Last Name: </label><input type="text" name="lastName" value="<?php echo $userModel->getLastName()?>"><br />
-			<label>Birthday: </label><input type="text" name="birthday" id="birthday" value="<?php echo $userModel->getBirthday() ?>"><br />
+			<label>Birthday: </label><input type="text" name="birthdate" id="birthday" value="<?php echo $userModel->getBirthday() ?>"><br />
 			<label>Mobile: </label><input type="text" name="mobile" value="<?php echo $userModel->getMobile()?>"><br />
 			<label>Email: </label><input type="text" name="email" value="<?php echo $userModel->getEmail()?>"><br />
 			

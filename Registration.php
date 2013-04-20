@@ -71,20 +71,7 @@
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="jquery-ui/jquery-1.9.1.js"></script>
-	<script src="jquery-ui/ui/jquery.ui.core.js"></script>
-	<script src="jquery-ui/ui/jquery.ui.widget.js"></script>
-	<script src="jquery-ui/ui/jquery.ui.datepicker.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#birthday").datepicker({
-				dateFormat: 'yy-mm-dd',
-	            changeMonth: true,
-	            changeYear: true,
-	            yearRange:'-100y:c+nn',
-	            maxDate: '-18y'
-	        });
-		});
+	
 	</script>
 	</body>
 </html>

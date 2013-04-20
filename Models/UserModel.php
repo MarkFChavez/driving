@@ -9,7 +9,7 @@ class UserModel {
 	private $mobile;
 	private $email;
 	private $reservationDate;
-	
+
 	public function populateModel($data) {
 		$this->setFirstName($data['firstName']);
 		$this->setLastName($data['lastName']);
@@ -17,7 +17,7 @@ class UserModel {
 		$this->setAge($data['mobile']);
 		$this->setBirthday($data['birthdate']);
 		$this->setEmail($data['email']);
-		
+		$this->setReservationDate($data['reservationDate']);		
 		
 		return $this->validateData($data);
 	}

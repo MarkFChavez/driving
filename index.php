@@ -48,8 +48,8 @@
           <a href="#" class="brand">Driiivee</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li class="active"><a href="index.php">Home</a></li>
+              <li><a href="Registration.php">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -58,33 +58,11 @@
     </div>
   
 	<div class="container">
-		<form method="post" class="well">
-			<label>First Name: </label><input type="text" name="firstName" value="<?php echo $userModel->getFirstName() ?>"><br />
-			<label>Middle Name: </label><input type="text" name="middleName" value="<?php echo $userModel->getMiddleName() ?>"><br />
-			<label>Last Name: </label><input type="text" name="lastName" value="<?php echo $userModel->getLastName()?>"><br />
-			<label>Birthday: </label><input type="text" name="birthday" id="birthday" value="<?php echo $userModel->getBirthday() ?>"><br />
-			<label>Mobile: </label><input type="text" name="mobile" value="<?php echo $userModel->getMobile()?>"><br />
-			<label>Email: </label><input type="text" name="email" value="<?php echo $userModel->getEmail()?>"><br />
-			
-			<input type="submit" name="Register" value="Register" />
-		</form>
+		<h1>This is the skeleton</h1>
+		<p>I need to add more stuff here</p>
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="jquery-ui/jquery-1.9.1.js"></script>
-	<script src="jquery-ui/ui/jquery.ui.core.js"></script>
-	<script src="jquery-ui/ui/jquery.ui.widget.js"></script>
-	<script src="jquery-ui/ui/jquery.ui.datepicker.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#birthday").datepicker({
-				dateFormat: 'yy-mm-dd',
-	            changeMonth: true,
-	            changeYear: true,
-	            yearRange:'-100y:c+nn',
-	            maxDate: '-18y'
-	        });
-		});
-	</script>
+	
 	</body>
 </html>

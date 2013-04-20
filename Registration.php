@@ -2,9 +2,9 @@
 #Author Lance Zaldua
 #For Improvement
 
-	include '../Models/UserModel.php';
-	include '../Connector/Connector.php';
-	include '../Services/UserService.php';
+	include 'Models/UserModel.php';
+	include 'Connector/Connector.php';
+	include 'Services/UserService.php';
 	
 	$userModel = new UserModel();
 	$db = new Connector();
@@ -48,8 +48,8 @@
           <a href="#" class="brand">Driiivee</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="index.php">Home</a></li>
+              <li class="active"><a href="Registration.php">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->

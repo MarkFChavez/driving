@@ -1,4 +1,7 @@
 <?php 
+#Author Lance Zaldua
+#For Improvement
+
 	include 'Models/UserModel.php';
 	include 'Connector/Connector.php';
 	include 'Services/UserService.php';

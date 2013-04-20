@@ -3,7 +3,7 @@
 class Connector {
 	
 	function __construct() {
-		$properties = parse_ini_file("config/dbcon.ini");
+		$properties = parse_ini_file("config/dbcon.ini");//read from .ini file
 		
 		if($db = mysql_connect($properties['host'], $properties['user'],$properties['pass']) or die($this->write_log("Error Connecting to Database: ".mysql_error())))
 		{
